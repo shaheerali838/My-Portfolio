@@ -104,6 +104,7 @@ section {
 
 .home-content {
     max-width: 60rem;
+    z-index: 999;
 }
 
 .home-content h1 {
@@ -123,16 +124,37 @@ section {
 }
 
 .home-content .text-animate h3 {
-    font-size: 3.2rem;
-    font-weight: 700;
+    font-size: 3.4rem;
+    font-weight: 600;
     color: transparent;
-    -webkit-text-stroke: .2px var(--main-color);
+    margin-bottom: 2rem;
+    -webkit-text-stroke: .1px var(--main-color);
+    background-image: linear-gradient(var(--main-color), var(--main-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -10rem 0;
+    animation: homebgtext linear infinite;
+    animation-delay: 2s;
+}
+
+.home-content .text-animate h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-right: 2px solid var(--main-color);
+    z-index: -1;
+    animation: homeCursortext linear infinite;
+    animation-delay: 2s;
 }
 
 .home-content p {
     font-size: 1.8rem;
     color: var(--text-color);
     margin-top: 2rem 0 4rem;
+    margin-bottom: 1rem;
 }
 
 .btn-box {
@@ -819,6 +841,189 @@ span {
     .header {
         background: var(--bg-color);
     }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--main-color);
+        box-shadow: 0rem .5rem 1rem rgb(0, 0, 0, 0.2);
+        transition: .25s ease;
+        transition-delay: .25s;
+        -webkit-transition: .25s ease;
+        -moz-transition: .25s ease;
+        -ms-transition: .25s ease;
+        -o-transition: .25s ease;
+        z-index: 1;
+    }
+
+    .navbar .active-nav {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgb(0, 0, 0, .2rem);
+        z-index: -1;
+        transition: .25s ease;
+        transition-delay: 0s;
+        -webkit-transition: .25s ease;
+        -moz-transition: .25s ease;
+        -ms-transition: .25s ease;
+        -o-transition: .25s ease;
+    }
+
+    .navbar.active .active-nav {
+        left: 0;
+        transition-delay: .25s;
+    }
+
+    .navbar.active {
+        left: 0;
+        transition-delay: 0s;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        transition: .25s ease;
+        transition-delay: 0s;
+        transform: translateX(-20rem);
+        -webkit-transform: translateX(-20rem);
+        -moz-transform: translateX(-20rem);
+        -ms-transform: translateX(-20rem);
+        -o-transform: translateX(-20rem);
+        -webkit-transition: .25s ease;
+        -moz-transition: .25s ease;
+        -ms-transition: .25s ease;
+        -o-transition: .25s ease;
+    }
+
+    .navbar.active a {
+        transition-delay: .25s;
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -ms-transform: translateX(0);
+        -o-transform: translateX(0);
+
+    }
+
+    .home-imghover {
+        pointer-events: none;
+        background: var(--bg-color);
+        opacity: .6;
+    }
+}
+
+@media (max-width: 520px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home-content h1 {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .home-sci {
+        width: 160px;
+
+    }
+
+    .home-sci a {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media (max-width: 462px) {
+    .home-content h1 {
+        font-size: 5.2rem;
+    }
+
+    .education {
+        padding: 10rem 4% 5rem 5%;
+    }
+
+    .contact form .input-box .input-field {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width:371px) {
+    .home {
+        justify-content: center;
+    }
+
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
 }
 
 /* ************* section Breakpoints ends here ************* */
+
+/* ************* section Keyframes starts here ************* */
+
+@keyframes homebgtext {
+
+    0%,
+    10%,
+    100% {
+        background-position: -33rem 0;
+    }
+
+    65%,
+    85% {
+        background-position: 0 0;
+    }
+}
+
+@keyframes homeCursortext {
+
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+    65%,
+    78%,
+    85% {
+        width: 100%;
+        opacity: 1;
+    }
+
+    75%,
+    81% {
+        opacity: 0;
+    }
+}
+
+/* ************* section Keyframes ends here ************* */
