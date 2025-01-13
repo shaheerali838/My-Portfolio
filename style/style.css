@@ -12,8 +12,8 @@
 }
 
 :root {
-    --bg-color: #081b29;
-    --second-bg-color: #112e42;
+    --bg-color: #051D2B;
+    --second-bg-color: #112E42;
     --text-color: #ededed;
     --main-color: #00abf0;
 }
@@ -364,6 +364,7 @@ span {
 }
 
 .about-img img {
+    position: relative;
     width: 90%;
     border-radius: 50%;
     -webkit-border-radius: 50%;
@@ -402,16 +403,20 @@ span {
 }
 
 .about-content h3 {
+    position: relative;
+    display: inline-block;
     font-size: 2.6rem;
     text-align: center;
 }
 
 .about-content p {
+    position: relative;
     font-size: 1.6rem;
     margin: 2rem 0 3rem 0;
 }
 
 .btn-box.btns {
+    position: relative;
     display: inline-block;
     width: 15rem;
     justify-content: center;
@@ -445,11 +450,14 @@ span {
 }
 
 .education-row .education-column .title {
+    position: relative;
+    display: inline-block;
     font-size: 2.5rem;
     margin: 0 0 1.5rem 2rem;
 }
 
 .education-column .education-box {
+    position: relative;
     border-left: .2rem solid var(--main-color);
 }
 
@@ -855,9 +863,17 @@ span {
     -moz-transition: 1s ease;
     -ms-transition: 1s ease;
     -o-transition: 1s ease;
+    animation: none;
+    -webkit-animation: none;
 }
 
-.about.show-animate .animate.scroll {
+.education .education-box .animate.scroll {
+    width: 105%;
+}
+
+.about.show-animate .animate.scroll,
+.education.show-animate .animate.scroll,
+.education.show-animate .education-box .animate.scroll {
     animation-delay: calc(.3s * var(--i));
     width: 0;
 
