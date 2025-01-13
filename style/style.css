@@ -136,7 +136,7 @@ section {
     font-weight: 600;
     color: transparent;
     margin-bottom: 2rem;
-    -webkit-text-stroke: .1px var(--main-color);
+    -webkit-text-stroke: .7px var(--main-color);
     background-image: linear-gradient(var(--main-color), var(--main-color));
     background-repeat: no-repeat;
     -webkit-background-clip: text;
@@ -867,17 +867,6 @@ span {
     -webkit-animation: none;
 }
 
-.education .education-box .animate.scroll {
-    width: 105%;
-}
-
-.about.show-animate .animate.scroll,
-.education.show-animate .animate.scroll,
-.education.show-animate .education-box .animate.scroll {
-    animation-delay: calc(.3s * var(--i));
-    width: 0;
-
-}
 
 /* ************* section animation reload and scroll ends here ************* */
 
@@ -989,14 +978,28 @@ span {
 
     }
 
-    .home-imghover {
+    .home-content {
+        width: 60%;
+
+        h1 {
+            font-size: 5rem;
+        }
+    }
+
+    /* .home-imghover {
         pointer-events: none;
         background: var(--bg-color);
-        opacity: .6;
-    }
+        opacity: 1;
+    } */
 }
 
 @media (max-width: 520px) {
+
+
+    .animate.home-img {
+        display: none;
+    }
+
     html {
         font-size: 50%;
     }
@@ -1019,6 +1022,31 @@ span {
 }
 
 @media (max-width: 462px) {
+    .home {
+        justify-content: center;
+        text-align: center;
+        background: none;
+
+        .home-content {
+            width: 100%;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .text-animate h3 {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+
+    }
+
+    .animate.home-img {
+        display: none;
+    }
+
     .home-content h1 {
         font-size: 5.2rem;
     }
@@ -1042,6 +1070,10 @@ span {
 }
 
 @media (max-width:371px) {
+    .animate.home-img {
+        display: none;
+    }
+
     .home {
         justify-content: center;
     }
@@ -1057,6 +1089,7 @@ span {
     .home-content h1 {
         font-size: 5rem;
     }
+
 }
 
 /* ************* section Breakpoints ends here ************* */
