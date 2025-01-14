@@ -11,6 +11,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
+h1,
+h2,
+h3,
+p {
+    cursor: default;
+}
+
 :root {
     --bg-color: #051D2B;
     --second-bg-color: #112E42;
@@ -482,6 +489,7 @@ span {
 }
 
 .education-content .content {
+    cursor: default;
     position: relative;
     padding: 1.5rem;
     border: 0.2rem solid var(--main-color);
