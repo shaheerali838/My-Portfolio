@@ -146,7 +146,6 @@ section {
 }
 
 .home-content .text-animate h3 {
-    width: 120%;
     font-size: 3.4rem;
     font-weight: 600;
     color: transparent;
@@ -154,6 +153,7 @@ section {
     -webkit-text-stroke: 0.7px var(--main-color);
     background-image: linear-gradient(var(--main-color), var(--main-color));
     background-repeat: no-repeat;
+    background-clip: text;
     -webkit-background-clip: text;
     background-position: -33rem 0;
     animation: homebgtext 6s linear infinite;
