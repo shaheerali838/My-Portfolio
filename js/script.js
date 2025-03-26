@@ -41,3 +41,128 @@ window.onscroll = () => {
   menuIcon.classList.remove("bx-x");
   navbar.classList.remove("active");
 };
+
+// Slider
+const slides = [
+  {
+    image: "./images/data-analytics.png",
+    title: "Data Science Solutions",
+    para: "A modern website for a tech company specializing in data science.",
+    src: "https://practice-web-2.vercel.app/",
+  },
+  {
+    image: "./images/E-Commerce.png",
+    title: "E-Commerce Store",
+    para: "A modern website for Devine Coders.",
+    src: "https://divinecoders.vercel.app/",
+  },
+  {
+    image: "./images/netflix clone.png",
+    title: "Streaming Entertainment Platform",
+    para: "A modern website for Clone of Netflix.",
+    src: "https://netflix-clone-hazel-phi.vercel.app/",
+  },
+  {
+    image: "./images/pocket.png",
+    title: "Visa Assistance Hub",
+    para: "A modern website for Poket, a visa services company.",
+    src: "https://practice-web-3.vercel.app/",
+  },
+  {
+    image: "./images/calculator.jpg",
+    title: "FoodPanda Clone",
+    para: "A food delivery web app inspired by FoodPanda.",
+    src: "https://my-calculator-eta-smoky.vercel.app/",
+  },
+];
+
+let activeIndex = 2;
+
+function calculateStyle(index) {
+  let stt = 0;
+  let style = {};
+
+  if (index === activeIndex) {
+    return {
+      transform: "none",
+      zIndex: 1,
+      filter: "none",
+      opacity: 1,
+    };
+  }
+
+  if (index > activeIndex) {
+    stt = index - activeIndex;
+    style.transform = `translateX(${280 * stt}px) scale(${
+      0.8 - 0.1 * stt
+    }) perspective(16px) rotateY(-1deg)`;
+  } else {
+    stt = activeIndex - index;
+    style.transform = `translateX(${-280 * stt}px) scale(${
+      0.8 - 0.1 * stt
+    }) perspective(16px) rotateY(1deg)`;
+  }
+
+  style.zIndex = -stt;
+  style.filter = "blur(4px)";
+  style.opacity = stt > 2 ? 0 : 0.6;
+
+  return style;
+}
+
+function createSlider() {
+  const slider = document.getElementById("slider");
+
+  // Create items once
+  slides.forEach((slide, index) => {
+    const item = document.createElement("div");
+    item.className = "item";
+    item.innerHTML = `
+      <div class="image-container">
+        <img src="${slide.image}" alt="${slide.title}" onerror="this.src='https://via.placeholder.com/400x300';">
+      </div>
+      <div class="content">
+        <h2>${slide.title}</h2>
+        <p>${slide.para}</p>
+        <a href="${slide.src}" target="_blank" class="cardBtn">View</a>
+      </div>
+    `;
+    slider.appendChild(item);
+  });
+
+  // Add navigation buttons once
+  slider.innerHTML += `
+    <button class="nav-btn prev" onclick="handlePrev()"><</button>
+    <button class="nav-btn next" onclick="handleNext()">></button>
+  `;
+}
+
+function updateSlider() {
+  const items = document.querySelectorAll(".item");
+  items.forEach((item, index) => {
+    const style = calculateStyle(index);
+    item.style.transform = style.transform;
+    item.style.zIndex = style.zIndex;
+    item.style.filter = style.filter;
+    item.style.opacity = style.opacity;
+  });
+}
+
+function handleNext() {
+  activeIndex = Math.min(activeIndex + 1, slides.length - 1);
+  updateSlider();
+}
+
+function handlePrev() {
+  activeIndex = Math.max(activeIndex - 1, 0);
+  updateSlider();
+}
+
+// Initialize slider and set initial styles
+createSlider();
+updateSlider();
+
+// Make functions globally available
+window.handleNext = handleNext;
+window.handlePrev = handlePrev;
+// Slider
