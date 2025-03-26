@@ -109,10 +109,11 @@ section {
     display: flex;
     align-items: center;
     padding: 0 9%;
-    background-image: url(../images/mainenhanced.png);
+    background-image: url(../images/image-removebg-preview.png);
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-position: right;
+    background-position-x: 85rem;
+    background-size: 40rem;
 }
 
 .home-content {
@@ -564,6 +565,7 @@ span {
     margin: 0 0 1.5rem;
 }
 
+
 .skills-box .skills-content {
     position: relative;
     border: .2rem solid var(--main-color);
@@ -574,7 +576,9 @@ span {
     -ms-border-radius: .6rem;
     -o-border-radius: .6rem;
     overflow: hidden;
+
     z-index: 1;
+    width: fit-content;
     transition: .5s linear all;
     -webkit-transition: .5s linear all;
     -moz-transition: .5s linear all;
@@ -677,6 +681,7 @@ span {
 }
 
 /* ************* section Education ends here ************* */
+
 
 /* ************* section Contact starts here ************* */
 
@@ -884,6 +889,13 @@ span {
     html {
         font-size: 55%;
     }
+
+    .home {
+        background-position-x: 77rem;
+        background-position-y: 22rem;
+        background-size: 30rem;
+
+    }
 }
 
 @media (max-width: 991px) {
@@ -898,6 +910,7 @@ span {
 
     .home {
         padding: 0 4%;
+
     }
 
     .footer {
@@ -994,11 +1007,15 @@ span {
         }
     }
 
-    /* .home-imghover {
-        pointer-events: none;
-        background: var(--bg-color);
-        opacity: 1;
-    } */
+    .home {
+        background-position-x: 57rem;
+        background-position-y: 12rem;
+        background-size: 30rem;
+
+    }
+
+
+
 }
 
 @media (max-width: 520px) {
@@ -1157,3 +1174,10 @@ span {
 }
 
 /* ************* section Keyframes ends here ************* */
+
+
+/* ************* section test project starts here ************* */
+
+
+
+/* ************* section test project ends here ************* */
