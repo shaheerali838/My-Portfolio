@@ -120,6 +120,7 @@ section {
     background-position: right;
     background-position-x: 85rem;
     background-size: 40rem;
+
 }
 
 .home-content {
@@ -821,7 +822,7 @@ span {
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 424px) {
     .slider {
         height: auto;
         display: block;
