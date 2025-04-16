@@ -42,6 +42,7 @@ window.onscroll = () => {
   navbar.classList.remove("active");
 };
 
+// Slider for projects start here
 // Slider
 const slides = [
   {
@@ -55,6 +56,12 @@ const slides = [
     title: "E-Commerce Store",
     para: "A modern website for Devine Coders.",
     src: "https://divinecoders.vercel.app/",
+  },
+  {
+    image: "./images/gsap-apple-web.png",
+    title: "gsap apple web",
+    para: "A modern website for Apple IPhone using Gsap, Three.js and React.",
+    src: "https://gsap-apple-web.vercel.app/",
   },
   {
     image: "./images/netflix clone.png",
