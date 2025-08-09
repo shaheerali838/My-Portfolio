@@ -63,12 +63,7 @@ const slides = [
     para: "A modern website for Apple IPhone using Gsap, Three.js and React.",
     src: "https://gsap-apple-web.vercel.app/",
   },
-  {
-    image: "./images/netflix clone.png",
-    title: "Streaming Entertainment Platform",
-    para: "A modern website for Clone of Netflix.",
-    src: "https://netflix-clone-hazel-phi.vercel.app/",
-  },
+
   {
     image: "./images/pocket.png",
     title: "Visa Assistance Hub",
