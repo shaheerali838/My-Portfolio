@@ -63,6 +63,12 @@ const slides = [
     para: "A modern website for Apple IPhone using Gsap, Three.js and React.",
     src: "https://gsap-apple-web.vercel.app/",
   },
+  {
+    image: "./images/WeatherReact.png",
+    title: "A modern website for Weather reports",
+    para: "A modern website for weather forcasts made in react",
+    src: "https://weather-react-five-beta.vercel.app/",
+  },
 
   {
     image: "./images/pocket.png",
@@ -72,8 +78,8 @@ const slides = [
   },
   {
     image: "./images/calculator.jpg",
-    title: "FoodPanda Clone",
-    para: "A food delivery web app inspired by FoodPanda.",
+    title: "A simple Calculator",
+    para: "A Simple Calculator web made by me which perform simple calculations.",
     src: "https://my-calculator-eta-smoky.vercel.app/",
   },
 ];
