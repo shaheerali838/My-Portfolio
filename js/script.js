@@ -174,3 +174,28 @@ updateSlider();
 window.handleNext = handleNext;
 window.handlePrev = handlePrev;
 // Slider
+const text = "MERN Stack Developer";
+const typedText = document.getElementById("typed-text");
+let index = 0;
+let forward = true;
+
+function typeEffect() {
+  if (forward) {
+    typedText.textContent += text.charAt(index);
+    index++;
+    if (index === text.length) {
+      forward = false;
+      setTimeout(typeEffect, 1500); // pause at full text
+      return;
+    }
+  } else {
+    typedText.textContent = text.substring(0, index - 1);
+    index--;
+    if (index === 0) {
+      forward = true;
+    }
+  }
+  setTimeout(typeEffect, forward ? 150 : 50);
+}
+
+typeEffect();

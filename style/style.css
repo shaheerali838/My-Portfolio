@@ -149,6 +149,7 @@ section {
 .home-content .text-animate h3 {
     font-size: 3.4rem;
     font-weight: 600;
+    width: 150%;
     color: transparent;
     margin-bottom: 2rem;
     -webkit-text-stroke: 0.7px var(--main-color);
@@ -162,18 +163,56 @@ section {
     -webkit-animation: homebgtext 6s linear infinite;
 }
 
-.home-content .text-animate h3::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    border-right: 2px solid var(--main-color);
-    z-index: -1;
-    animation: homeCursortext 6s linear infinite;
-    animation-delay: 2s;
-    -webkit-animation: homeCursortext 6s linear infinite;
+.text-animate h3 {
+    font-size: 3.4rem;
+    font-weight: 600;
+    color: transparent;
+    -webkit-text-stroke: 0.7px var(--main-color);
+    background: linear-gradient(90deg, #ff6ec4, #7873f5, #42e695);
+    /* Dynamic gradient */
+    -webkit-background-clip: text;
+    background-clip: text;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    background-size: 200% auto;
+    animation: gradientSlide 3s linear infinite;
+}
+
+/* Gradient sliding animation */
+@keyframes gradientSlide {
+    0% {
+        background-position: 0% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Blinking cursor */
+.cursor {
+    display: inline-block;
+    background-color: var(--main-color);
+    width: 2px;
+    animation: blink 0.7s infinite;
+    margin-left: 2px;
+    vertical-align: bottom;
+}
+
+@keyframes blink {
+
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+
+    25%,
+    75% {
+        opacity: 0;
+    }
 }
 
 .home-content p {
@@ -642,47 +681,63 @@ span {
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span {
-    width: 90%;
+    width: 100%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span {
-    width: 85%;
+    width: 100%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span {
-    width: 85%;
+    width: 95%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span {
-    width: 70%;
+    width: 95%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span {
-    width: 40%;
+    width: 80%;
 }
 
 .skills-column:nth-child(1) .skills-content .progress:nth-child(6) .bar span {
+    width: 75%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(7) .bar span {
+    width: 75%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(8) .bar span {
+    width: 70%;
+}
+
+.skills-column:nth-child(1) .skills-content .progress:nth-child(9) .bar span {
     width: 50%;
 }
 
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span {
-    width: 81%;
-}
-
-.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span {
     width: 90%;
 }
 
+.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span {
+    width: 85%;
+}
+
 .skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span {
-    width: 30%;
+    width: 80%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span {
-    width: 70%;
+    width: 40%;
 }
 
 .skills-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span {
+    width: 75%;
+}
+
+.skills-column:nth-child(2) .skills-content .progress:nth-child(6) .bar span {
     width: 80%;
 }
 
@@ -1310,7 +1365,7 @@ span {
     }
 }
 
-@keyframes homeCursortext {
+/* @keyframes homeCursortext {
 
     0%,
     10%,
@@ -1329,7 +1384,7 @@ span {
     81% {
         opacity: 0;
     }
-}
+} */
 
 @keyframes aboutSpinner {
     100% {
